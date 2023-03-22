@@ -1,6 +1,3 @@
-# Redux_basics
-
-[Edit on StackBlitz ⚡️](https://stackblitz.com/edit/react-ts-dru8zx)
 /\*
 
     ------------------------** REDUX **--------------------
@@ -30,11 +27,14 @@
 
 \*/
 
-/_
-------_ ACTIONS \*-------
-Actions ae way to interact with the store - it is a plain js object - had type property describes what happend in the application
+/\*
 
-\*/
+    ------* ACTIONS *-------
+
+    Actions ae way to interact with the store
+        - it is a plain js object
+        - had type property describes what happend in the application
+
 const CAKE_ORDERED = "CAKE_ORDERED";
 
 //action creator
@@ -45,13 +45,10 @@ quantity: 1 // othe info
 }
 }
 
-/_
-------_ REDUCERS \*-------
-Tells how the apps state should change in response to the actions
-Reducers are the functions which accespts state and the action ad the param, and returns the next state of the application
-(prev state, action) => new state
-
-\*/
+    ------* REDUCERS *-------
+    Tells how the apps state should change in response to the actions
+    Reducers are the functions which accespts state and the action ad the param, and returns the next state of the application
+    (prev state, action) =>  new state
 
 const initial_state = {
 numOfCakes: 10,
@@ -70,15 +67,14 @@ return state
 }
 }
 
-/_
------_ STORE \*-----
+-----_ STORE _-----
 we have only 1 store for entire application
 
 getState() -> to acess the state of the application
 dispatch(action) -> how the state to be updated
 subscribe(listener) -> any time state in the redux store changes
 unsubscribe -> calling a method returned by subscribe()
-\*/
+
 const redux = require("redux")
 const createStore = redux.createStore;
 const store = createStore(reducer)
@@ -94,3 +90,5 @@ store.dispatch(orderCake())
 
 //calling a method returned by subscribe()
 unsubscribe();
+
+\*/
